@@ -229,8 +229,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Author**: Shikhar Gupta
 - **Email**: shikhargupta0016@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/your-profile)
-- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+- **LinkedIn**: [LinkedIn Profile](https://linkedin.com/shikhar-gupta-9a05b4251/)
+- **GitHub**: [GitHub Profile](https://github.com/Rusticsoul08)
 
 ### Support
 - 📧 **Email Support**: Send detailed questions to the contact email
