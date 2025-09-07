@@ -1,0 +1,59 @@
+{
+  "name": "intelli-code-secure",
+  "version": "1.0.0",
+  "description": "AI-Powered Code Analysis & Security Scanner - An innovative web platform for automated code review and security scanning",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "build": "echo \"Build process for static files\"",
+    "deploy": "echo \"Deploy to AWS S3 or other hosting platform\""
+  },
+  "keywords": [
+    "ai",
+    "code-analysis",
+    "security-scanner",
+    "web-development",
+    "javascript",
+    "code-quality",
+    "static-analysis",
+    "vulnerability-detection",
+    "automated-review",
+    "aws",
+    "cloud-computing",
+    "machine-learning"
+  ],
+  "author": {
+    "name": "Shikhar Gupta",
+    "email": "shikhargupta0016@gmail.com",
+    "url": "https://github.com/shikhargupta0016"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shikhargupta0016/intelli-code-secure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shikhargupta0016/intelli-code-secure/issues"
+  },
+  "homepage": "https://github.com/shikhargupta0016/intelli-code-secure#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "files": [
+    "index.html",
+    "style.css",
+    "app.js",
+    "README.md",
+    "assets/"
+  ]
+}

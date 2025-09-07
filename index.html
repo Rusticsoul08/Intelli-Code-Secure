@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelli-Code Secure - AI-Powered Code Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🛡️ Intelli-Code Secure</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#analyzer" class="nav-link" data-section="analyzer">Analyzer</a>
+                <a href="#dashboard" class="nav-link" data-section="dashboard">Dashboard</a>
+                <a href="#settings" class="nav-link" data-section="settings">Settings</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Intelli-Code Secure</h1>
+                    <p class="hero-subtitle">AI-Powered Code Analysis & Security Scanner</p>
+                    <p class="hero-description">Enhance your code quality with advanced AI analysis, automated security scanning, and intelligent refactoring suggestions.</p>
+                    <button class="btn btn--primary btn--lg cta-button" data-section="analyzer">Start Analyzing Code</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Accuracy Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Code Quality Improvement</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Time Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Languages Supported</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="container">
+                <h2 class="section-title">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>AI Code Review</h3>
+                        <p>Automated analysis for code quality, style, and best practices using advanced machine learning models.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Security Scanning</h3>
+                        <p>Detect vulnerabilities like SQL injection, XSS, and other security flaws with 95% accuracy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Auto Refactoring</h3>
+                        <p>Intelligent code optimization suggestions to improve performance and maintainability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">☁️</div>
+                        <h3>Cloud Integration</h3>
+                        <p>Scalable analysis powered by AWS infrastructure for high availability and performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analyzer Section -->
+    <section id="analyzer" class="section">
+        <div class="container">
+            <h2 class="section-title">Code Analyzer</h2>
+
+            <div class="analyzer-layout">
+                <div class="code-input-section">
+                    <div class="input-controls">
+                        <select id="languageSelect" class="language-select">
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                        </select>
+                        <button class="btn btn--secondary" id="loadSampleBtn">Load Sample Code</button>
+                        <button class="btn btn--secondary" id="clearCodeBtn">Clear</button>
+                    </div>
+
+                    <div class="code-editor">
+                        <textarea id="codeInput" class="code-textarea" placeholder="Paste your code here for analysis..."></textarea>
+                    </div>
+
+                    <div class="analyzer-actions">
+                        <button class="btn btn--primary" id="analyzeBtn">
+                            <i class="fas fa-play"></i> Analyze Code
+                        </button>
+                        <div class="file-upload">
+                            <input type="file" id="fileInput" accept=".py,.js,.java,.cpp,.c,.h,.ts,.go,.rs" style="display: none;">
+                            <button class="btn btn--secondary" onclick="document.getElementById('fileInput').click()">
+                                <i class="fas fa-upload"></i> Upload File
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-results" id="analysisResults" style="display: none;">
+                    <div class="analysis-header">
+                        <h3>Analysis Results</h3>
+                        <div class="analysis-actions">
+                            <button class="btn btn--secondary btn--sm" id="exportBtn">
+                                <i class="fas fa-download"></i> Export Report
+                            </button>
+                            <button class="btn btn--secondary btn--sm" id="saveAnalysisBtn">
+                                <i class="fas fa-save"></i> Save Analysis
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="analysis-tabs">
+                        <button class="tab-btn active" data-tab="quality">Code Quality</button>
+                        <button class="tab-btn" data-tab="security">Security</button>
+                        <button class="tab-btn" data-tab="refactoring">Refactoring</button>
+                        <button class="tab-btn" data-tab="performance">Performance</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div id="quality" class="tab-pane active">
+                            <div class="score-card">
+                                <div class="score-circle">
+                                    <span class="score-value" id="qualityScore">--</span>
+                                    <span class="score-label">Quality Score</span>
+                                </div>
+                            </div>
+                            <div id="qualityIssues" class="issues-list"></div>
+                        </div>
+
+                        <div id="security" class="tab-pane">
+                            <div class="score-card">
+                                <div class="score-circle">
+                                    <span class="score-value" id="securityScore">--</span>
+                                    <span class="score-label">Security Score</span>
+                                </div>
+                            </div>
+                            <div id="securityIssues" class="issues-list"></div>
+                        </div>
+
+                        <div id="refactoring" class="tab-pane">
+                            <div id="refactoringSuggestions" class="suggestions-list"></div>
+                        </div>
+
+                        <div id="performance" class="tab-pane">
+                            <div id="performanceTips" class="tips-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Analyzing your code...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h2 class="section-title">Analysis Dashboard</h2>
+
+            <div class="dashboard-stats">
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📊</div>
+                    <div class="dashboard-info">
+                        <div class="dashboard-number" id="totalAnalyses">0</div>
+                        <div class="dashboard-label">Total Analyses</div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">🐛</div>
+                    <div class="dashboard-info">
+                        <div class="dashboard-number" id="issuesFound">0</div>
+                        <div class="dashboard-label">Issues Found</div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">✅</div>
+                    <div class="dashboard-info">
+                        <div class="dashboard-number" id="issuesFixed">0</div>
+                        <div class="dashboard-label">Issues Fixed</div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">⚡</div>
+                    <div class="dashboard-info">
+                        <div class="dashboard-number" id="avgScore">--</div>
+                        <div class="dashboard-label">Avg Quality Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Recent Analyses</h3>
+                <div class="history-list" id="historyList">
+                    <div class="empty-state">
+                        <p>No analyses yet. Start by analyzing some code!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settings" class="section">
+        <div class="container">
+            <h2 class="section-title">Settings</h2>
+
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>Analysis Preferences</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="strictMode" class="setting-checkbox">
+                            <span class="checkmark"></span>
+                            Strict Mode Analysis
+                        </label>
+                        <p class="setting-description">Enable more rigorous code quality checks</p>
+                    </div>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="autoSave" class="setting-checkbox" checked>
+                            <span class="checkmark"></span>
+                            Auto-save Analyses
+                        </label>
+                        <p class="setting-description">Automatically save analysis results</p>
+                    </div>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="showLineNumbers" class="setting-checkbox" checked>
+                            <span class="checkmark"></span>
+                            Show Line Numbers
+                        </label>
+                        <p class="setting-description">Display line numbers in code editor</p>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Notifications</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="emailNotifications" class="setting-checkbox">
+                            <span class="checkmark"></span>
+                            Email Notifications
+                        </label>
+                        <p class="setting-description">Receive analysis reports via email</p>
+                    </div>
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="securityAlerts" class="setting-checkbox" checked>
+                            <span class="checkmark"></span>
+                            Security Alerts
+                        </label>
+                        <p class="setting-description">Get notified about critical security issues</p>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Export Settings</h3>
+                    <div class="setting-item">
+                        <label class="setting-label">Export Format:</label>
+                        <select id="exportFormat" class="setting-select">
+                            <option value="pdf">PDF Report</option>
+                            <option value="json">JSON Data</option>
+                            <option value="csv">CSV Summary</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button class="btn btn--primary" id="saveSettingsBtn">Save Settings</button>
+                <button class="btn btn--secondary" id="resetSettingsBtn">Reset to Default</button>
+                <button class="btn btn--danger" id="clearDataBtn">Clear All Data</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
